@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ms" viewBox="0 0 720 276" role="img" aria-labelledby="ms-designs-t ms-designs-d">
+  <title id="ms-designs-t">Sweep and grid designs</title>
+  <desc id="ms-designs-d">On two axes, a sweep evaluates the baseline and every coordinate that changes one axis. A grid evaluates every combination.</desc>
+  <style>
+    svg.ms{--ink:var(--md-default-fg-color,#1f2328);--mute:var(--md-default-fg-color--light,#6e7781);--rule:var(--md-default-fg-color--lighter,#c8ccd1);--fill:var(--md-code-bg-color,#f5f6f8);--acc:#4c6ef5;--hot:#e8590c}
+    @media (prefers-color-scheme:dark){svg.ms{--ink:var(--md-default-fg-color,#e6edf3);--mute:var(--md-default-fg-color--light,#9198a1);--rule:var(--md-default-fg-color--lighter,#3d444d);--fill:var(--md-code-bg-color,#1c2128);--acc:#748ffc;--hot:#ff922b}}
+    svg.ms text{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+    svg.ms .c{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+    svg.ms .s{font-size:11px}
+    svg.ms .h{font-weight:600}
+    svg.ms .mu{fill:var(--mute)}
+    svg.ms .ac{fill:var(--acc)}
+    svg.ms .ho{fill:var(--hot)}
+    svg.ms .box{fill:var(--fill);stroke:var(--rule)}
+    svg.ms .hot{fill:none;stroke:var(--hot)}
+    svg.ms .hz{fill:var(--hot);opacity:.1}
+    svg.ms .az{fill:var(--acc);opacity:.15}
+    svg.ms .ln{fill:none;stroke:var(--mute);stroke-width:1.5}
+    svg.ms .rl{fill:none;stroke:var(--rule)}
+    svg.ms .al{fill:none;stroke:var(--acc);stroke-width:2}
+    svg.ms .ah{fill:var(--mute)}
+    svg.ms .gr{fill:var(--rule)}
+  </style>
+  <defs>
+    <marker id="ms-designs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9z" class="ah"/>
+    </marker>
+  </defs>
+  <text x="40" y="22" class="h">Sweep</text>
+  <text x="40" y="40" class="s mu">default · one axis at a time · 8 coordinates</text>
+  <path d="M80 200H280M80 200V62" class="al"/>
+  <circle cx="80" cy="200" r="7" class="ac"/>
+  <circle cx="80" cy="154" r="5" class="ac"/>
+  <circle cx="80" cy="108" r="5" class="ac"/>
+  <circle cx="80" cy="62" r="5" class="ac"/>
+  <circle cx="130" cy="200" r="5" class="ac"/>
+  <circle cx="130" cy="154" r="5" class="rl"/>
+  <circle cx="130" cy="108" r="5" class="rl"/>
+  <circle cx="130" cy="62" r="5" class="rl"/>
+  <circle cx="180" cy="200" r="5" class="ac"/>
+  <circle cx="180" cy="154" r="5" class="rl"/>
+  <circle cx="180" cy="108" r="5" class="rl"/>
+  <circle cx="180" cy="62" r="5" class="rl"/>
+  <circle cx="230" cy="200" r="5" class="ac"/>
+  <circle cx="230" cy="154" r="5" class="rl"/>
+  <circle cx="230" cy="108" r="5" class="rl"/>
+  <circle cx="230" cy="62" r="5" class="rl"/>
+  <circle cx="280" cy="200" r="5" class="ac"/>
+  <circle cx="280" cy="154" r="5" class="rl"/>
+  <circle cx="280" cy="108" r="5" class="rl"/>
+  <circle cx="280" cy="62" r="5" class="rl"/>
+  <circle cx="80" cy="200" r="11" class="al"/>
+  <text x="80" y="226" text-anchor="middle" class="s mu">0</text>
+  <text x="130" y="226" text-anchor="middle" class="s mu">1</text>
+  <text x="180" y="226" text-anchor="middle" class="s mu">2</text>
+  <text x="230" y="226" text-anchor="middle" class="s mu">3</text>
+  <text x="280" y="226" text-anchor="middle" class="s mu">4</text>
+  <text x="180" y="246" text-anchor="middle" class="s mu">pressure</text>
+  <text x="54" y="177" text-anchor="middle" class="s mu" transform="rotate(-90 54 177)">requester</text>
+  <text x="400" y="22" class="h">Grid</text>
+  <text x="400" y="40" class="s mu">every combination · 20 coordinates</text>
+  <path d="M440 200H640" class="rl"/>
+  <path d="M440 154H640" class="rl"/>
+  <path d="M440 108H640" class="rl"/>
+  <path d="M440 62H640" class="rl"/>
+  <path d="M440 200V62" class="rl"/>
+  <path d="M490 200V62" class="rl"/>
+  <path d="M540 200V62" class="rl"/>
+  <path d="M590 200V62" class="rl"/>
+  <path d="M640 200V62" class="rl"/>
+  <circle cx="440" cy="200" r="7" class="ac"/>
+  <circle cx="440" cy="154" r="5" class="ac"/>
+  <circle cx="440" cy="108" r="5" class="ac"/>
+  <circle cx="440" cy="62" r="5" class="ac"/>
+  <circle cx="490" cy="200" r="5" class="ac"/>
+  <circle cx="490" cy="154" r="5" class="ac"/>
+  <circle cx="490" cy="108" r="5" class="ac"/>
+  <circle cx="490" cy="62" r="5" class="ac"/>
+  <circle cx="540" cy="200" r="5" class="ac"/>
+  <circle cx="540" cy="154" r="5" class="ac"/>
+  <circle cx="540" cy="108" r="5" class="ac"/>
+  <circle cx="540" cy="62" r="5" class="ac"/>
+  <circle cx="590" cy="200" r="5" class="ac"/>
+  <circle cx="590" cy="154" r="5" class="ac"/>
+  <circle cx="590" cy="108" r="5" class="ac"/>
+  <circle cx="590" cy="62" r="5" class="ac"/>
+  <circle cx="640" cy="200" r="5" class="ac"/>
+  <circle cx="640" cy="154" r="5" class="ac"/>
+  <circle cx="640" cy="108" r="5" class="ac"/>
+  <circle cx="640" cy="62" r="5" class="ac"/>
+  <circle cx="440" cy="200" r="11" class="al"/>
+  <text x="440" y="226" text-anchor="middle" class="s mu">0</text>
+  <text x="490" y="226" text-anchor="middle" class="s mu">1</text>
+  <text x="540" y="226" text-anchor="middle" class="s mu">2</text>
+  <text x="590" y="226" text-anchor="middle" class="s mu">3</text>
+  <text x="640" y="226" text-anchor="middle" class="s mu">4</text>
+  <text x="540" y="246" text-anchor="middle" class="s mu">pressure</text>
+  <text x="414" y="177" text-anchor="middle" class="s mu" transform="rotate(-90 414 177)">requester</text>
+  <circle cx="300" cy="262" r="5" class="ac"/>
+  <text x="312" y="266" class="s">evaluated</text>
+  <circle cx="390" cy="262" r="11" class="al"/>
+  <text x="408" y="266" class="s">baseline</text>
+</svg>

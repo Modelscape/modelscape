@@ -1,0 +1,155 @@
+[project]
+name = "modelscape"
+version = "0.4.0"
+description = "Controlled behavioral mapping of large language models with generated tests and checked perturbations."
+readme = "README.md"
+authors = [{ name = "Sjoerd Vink", email = "sjoerdvink@icloud.com" }]
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["evaluation", "llm", "behavioral-testing", "test-generation", "robustness", "fairness", "visual-analytics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pydantic>=2.9",
+    "pyyaml>=6.0",
+]
+
+[project.urls]
+Homepage = "https://modelscape.github.io/modelscape/"
+Documentation = "https://modelscape.github.io/modelscape/"
+Repository = "https://github.com/Modelscape/modelscape"
+Issues = "https://github.com/Modelscape/modelscape/issues"
+
+[project.scripts]
+modelscape = "modelscape.cli:main"
+
+[project.entry-points."modelscape.scenarios"]
+evidence = "modelscape.scenarios.evidence:SCENARIO"
+
+[project.optional-dependencies]
+aws = [
+    "boto3>=1.43",
+]
+azure = [
+    "azure-identity>=1.26",
+    "openai>=3.26",
+]
+google = [
+    "google-genai>=2.28",
+]
+openai = [
+    "openai>=3.26",
+]
+anthropic = [
+    "anthropic>=1.11",
+]
+ollama = [
+    "ollama>=0.6.2",
+]
+providers = [
+    "modelscape[anthropic,aws,azure,google,ollama,openai]",
+]
+pandas = [
+    "pandas>=2.2.1",
+]
+widget = [
+    "anywidget>=0.9",
+    "modelscape[pandas]",
+]
+
+[dependency-groups]
+dev = [
+    "modelscape[providers,widget]",
+    "hypothesis>=6.168.5",
+    "pyright[nodejs]>=1.1.414",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "pytest-xdist>=3.8.0",
+    "ruff>=0.16.10",
+    "pandas-stubs>=2.2",
+    "pillow>=12.0",
+    "types-boto3-lite[bedrock-runtime]>=1.43",
+    "types-pyyaml>=6.0",
+]
+notebook = [
+    "modelscape[widget]",
+    "jupyterlab>=4.4",
+]
+docs = [
+    "mkdocstrings[python]>=1.0.8",
+    "zensical>=0.0.73",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "ASYNC",
+    "B",
+    "C4",
+    "E",
+    "ERA",
+    "F",
+    "I",
+    "N",
+    "PERF",
+    "PIE",
+    "PT",
+    "RET",
+    "RUF",
+    "SIM",
+    "TID",
+    "UP",
+    "W",
+]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "parents"
+
+[tool.pyright]
+include = ["src", "tests", "examples"]
+pythonVersion = "3.13"
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = ["--strict-markers", "--strict-config", "-m", "not integration"]
+markers = ["integration: calls live provider APIs; run with `uv run pytest -m integration`"]
+xfail_strict = true
+filterwarnings = [
+    "error",
+    "ignore:'_UnionGenericAlias' is deprecated:DeprecationWarning:google.genai.types",
+    "ignore:.*is an invalid escape sequence:SyntaxWarning",
+]
+
+[tool.coverage.run]
+source = ["modelscape"]
+branch = true
+parallel = true
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_covered = true

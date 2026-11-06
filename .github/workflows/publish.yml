@@ -1,0 +1,104 @@
+name: Publish
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
+      || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      new: ${{ steps.version.outputs.new }}
+      prerelease: ${{ steps.version.outputs.prerelease }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: astral-sh/setup-uv@v10.3.3
+      - id: version
+        run: |
+          version=$(uv version --short)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          prerelease=$(uv run --no-project --with packaging python -c \
+            "import sys; from packaging.version import Version; print(str(Version(sys.argv[1]).is_prerelease).lower())" "$version")
+          echo "prerelease=$prerelease" >> "$GITHUB_OUTPUT"
+          if curl -sf "https://pypi.org/pypi/modelscape/$version/json" > /dev/null; then
+            echo "new=false" >> "$GITHUB_OUTPUT"
+            echo "modelscape $version is already on PyPI; bump the version to publish." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "new=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v7
+        if: steps.version.outputs.new == 'true'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: page/package-lock.json
+      - if: steps.version.outputs.new == 'true'
+        run: npm --prefix page ci && npm --prefix page run build
+      - if: steps.version.outputs.new == 'true'
+        run: uv build
+      - if: steps.version.outputs.new == 'true'
+        run: uv run --isolated --no-project --no-cache --with dist/*.whl modelscape describe pressure
+      - if: steps.version.outputs.new == 'true'
+        run: >-
+          uv run --isolated --no-project --no-cache --with "$(ls dist/*.whl)" python -c
+          "from importlib.resources import files;
+          from modelscape import ReportPage;
+          assert files('modelscape').joinpath('static', 'page.js').is_file()"
+      - if: steps.version.outputs.new == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist
+
+  publish:
+    needs: build
+    if: needs.build.outputs.new == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/modelscape/${{ needs.build.outputs.version }}/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: uv publish --trusted-publishing always
+
+  release:
+    needs: [build, publish]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist
+      - run: >-
+          gh release create "v$VERSION" dist/*
+          --repo "$GITHUB_REPOSITORY" --target "$SHA" --title "v$VERSION" --generate-notes
+          --prerelease="$PRERELEASE"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+          PRERELEASE: ${{ needs.build.outputs.prerelease }}
+          SHA: ${{ github.event.workflow_run.head_sha || github.sha }}

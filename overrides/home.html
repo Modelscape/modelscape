@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  <section class="ms-hero">
+    <div class="ms-hero__inner md-grid">
+      <img class="ms-hero__logo" src="{{ 'logo.svg' | url }}" alt="">
+      <h1 class="ms-hero__title">Modelscape</h1>
+      <p class="ms-hero__tagline">{{ config.site_description }}</p>
+      <div class="ms-hero__actions md-typeset">
+        <a class="md-button md-button--primary" href="{{ 'quickstart/' | url }}">Get started</a>
+        <a class="md-button" href="{{ config.repo_url }}">GitHub</a>
+      </div>
+      <div class="ms-hero__install md-typeset">
+        <pre id="ms-install"><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#ms-install > code"></button><code>pip install modelscape</code></pre>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  {{ page.content }}
+{% endblock %}
