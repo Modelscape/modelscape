@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ms" viewBox="0 0 720 120" role="img" aria-labelledby="ms-workflow-t ms-workflow-d">
+  <title id="ms-workflow-t">Command-line workflow</title>
+  <desc id="ms-workflow-d">describe checks a scenario, run asks every target and writes outputs to modelscape.db and an optional JSON report, and view writes them as one HTML page.</desc>
+  <style>
+    svg.ms{--ink:var(--md-default-fg-color,#1f2328);--mute:var(--md-default-fg-color--light,#6e7781);--rule:var(--md-default-fg-color--lighter,#c8ccd1);--fill:var(--md-code-bg-color,#f5f6f8);--acc:#4c6ef5;--hot:#e8590c}
+    @media (prefers-color-scheme:dark){svg.ms{--ink:var(--md-default-fg-color,#e6edf3);--mute:var(--md-default-fg-color--light,#9198a1);--rule:var(--md-default-fg-color--lighter,#3d444d);--fill:var(--md-code-bg-color,#1c2128);--acc:#748ffc;--hot:#ff922b}}
+    svg.ms text{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+    svg.ms .c{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+    svg.ms .s{font-size:11px}
+    svg.ms .h{font-weight:600}
+    svg.ms .mu{fill:var(--mute)}
+    svg.ms .ac{fill:var(--acc)}
+    svg.ms .ho{fill:var(--hot)}
+    svg.ms .box{fill:var(--fill);stroke:var(--rule)}
+    svg.ms .hot{fill:none;stroke:var(--hot)}
+    svg.ms .hz{fill:var(--hot);opacity:.1}
+    svg.ms .az{fill:var(--acc);opacity:.15}
+    svg.ms .ln{fill:none;stroke:var(--mute);stroke-width:1.5}
+    svg.ms .rl{fill:none;stroke:var(--rule)}
+    svg.ms .al{fill:none;stroke:var(--acc);stroke-width:2}
+    svg.ms .ah{fill:var(--mute)}
+    svg.ms .gr{fill:var(--rule)}
+  </style>
+  <defs>
+    <marker id="ms-workflow-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9z" class="ah"/>
+    </marker>
+  </defs>
+  <rect x="20" y="40" width="120" height="40" rx="6" class="box" stroke-dasharray="4 3"/>
+  <text x="80" y="65" text-anchor="middle" class="c">describe</text>
+  <text x="80" y="100" text-anchor="middle" class="s mu">check variants, count calls</text>
+
+  <rect x="190" y="40" width="120" height="40" rx="6" class="box"/>
+  <text x="250" y="65" text-anchor="middle" class="c">run</text>
+  <text x="250" y="100" text-anchor="middle" class="s mu">ask every --target</text>
+
+  <rect x="370" y="8" width="160" height="48" rx="6" class="box"/>
+  <text x="450" y="28" text-anchor="middle" class="c">modelscape.db</text>
+  <text x="450" y="45" text-anchor="middle" class="s mu">outputs, reused on reruns</text>
+  <rect x="370" y="64" width="160" height="48" rx="6" class="box"/>
+  <text x="450" y="84" text-anchor="middle" class="c">--report *.json</text>
+  <text x="450" y="101" text-anchor="middle" class="s mu">scorecards, divergences</text>
+
+  <rect x="580" y="40" width="120" height="40" rx="6" class="box"/>
+  <text x="640" y="65" text-anchor="middle" class="c">view</text>
+  <text x="640" y="100" text-anchor="middle" class="s mu">one shareable page</text>
+
+  <g class="ln" marker-end="url(#ms-workflow-a)">
+    <path d="M142 60H186"/>
+    <path d="M312 60L366 36"/>
+    <path d="M312 60L366 84"/>
+    <path d="M532 34L576 56"/>
+    <path d="M532 86L576 64"/>
+  </g>
+</svg>

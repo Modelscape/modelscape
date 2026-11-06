@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.11", "3.12", "3.13", "3.14"]
+        include:
+          - os: macos-latest
+            python: "3.14"
+          - os: windows-latest
+            python: "3.14"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: true
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: page/package-lock.json
+      - run: npm --prefix page ci
+      - run: npm --prefix page run build
+      - run: uv sync --locked --all-extras --all-groups
+      - run: uv run ruff format --check .
+      - run: uv run ruff check .
+      - run: uv run pyright
+      - run: uv run pytest -n auto --cov
+
+  lowest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: true
+          python-version: "3.11"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: page/package-lock.json
+      - run: npm --prefix page ci
+      - run: npm --prefix page run build
+      - name: Test with every extra at its lowest version
+        run: |
+          uv sync --resolution lowest-direct --all-extras --all-groups
+          uv run --no-sync pytest -n auto
+      - name: Test with the core dependencies at their lowest versions
+        run: |
+          uv pip install --resolution lowest-direct --upgrade -r pyproject.toml
+          uv run --no-sync pytest -n auto
+
+  page:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: page
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: page/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+
+  package:
+    runs-on: ubuntu-latest
+    services:
+      ollama:
+        image: ollama/ollama:0.40.15
+        ports: ["11434:11434"]
+    env:
+      MODELSCAPE_OLLAMA_MODEL: qwen2.5:0.5b
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: page/package-lock.json
+      - run: npm --prefix page ci
+      - run: npm --prefix page run build
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: true
+      - run: uv build
+      - run: uv run --isolated --no-project --no-cache --with dist/*.whl modelscape describe pressure
+      - run: >-
+          uv run --isolated --no-project --no-cache --with "$(ls dist/*.whl)" python -c
+          "from importlib.resources import files;
+          from modelscape import ReportPage, lexicons;
+          assert files('modelscape').joinpath('static', 'page.js').is_file();
+          assert files('modelscape').joinpath('static', 'builder.js').is_file();
+          assert files('modelscape').joinpath('skills', 'modelscape', 'SKILL.md').is_file();
+          assert lexicons.available() == ('injections', 'names', 'pressure', 'roles', 'tones')"
+      - name: Pull the end-to-end model
+        run: >-
+          curl -sSf --retry 10 --retry-connrefused http://localhost:11434/api/pull
+          -d "{\"model\": \"$MODELSCAPE_OLLAMA_MODEL\", \"stream\": false}"
+      - name: Run, check, and view a live model with the installed wheel
+        run: >-
+          uv run --isolated --no-project --no-cache
+          --with "modelscape[ollama] @ $(pwd)/$(ls dist/*.whl)" --with pytest --with pytest-asyncio
+          pytest -m integration -p no:cacheprovider tests/test_integration.py

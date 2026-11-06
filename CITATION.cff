@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: If you use modelscape in your research, please cite it.
+type: software
+title: modelscape
+abstract: Behavioral testing for large language models. Modelscape changes one detail of a prompt at a time with checked perturbations, asks every variant repeatedly, and reports where answers change beyond run-to-run noise, set against the correct answer of every variant.
+authors:
+  - family-names: Vink
+    given-names: Sjoerd
+  - family-names: Kim
+    given-names: Byungmoo
+  - family-names: Brennen
+    given-names: Andrea
+  - family-names: Chang
+    given-names: Remco
+license: MIT
+repository-code: https://github.com/Modelscape/modelscape
+url: https://modelscape.github.io/modelscape/
+keywords:
+  - evaluation
+  - large language models
+  - behavioral testing
+  - robustness

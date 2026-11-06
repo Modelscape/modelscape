@@ -1,0 +1,94 @@
+site_name: Modelscape
+site_description: Behavioral testing of language models through structured task perturbation.
+site_url: https://modelscape.github.io/modelscape/
+repo_url: https://github.com/Modelscape/modelscape
+repo_name: Modelscape/modelscape
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Guide:
+      - Concepts: concepts.md
+      - Specs: specs.md
+      - Builder: builder.md
+      - AI agents: agents.md
+      - Scenarios: scenarios.md
+      - Providers: providers.md
+  - Examples:
+      - Overview: examples/index.md
+      - Data access: examples/access.md
+      - Purchase cards: examples/purchases.md
+      - Records requests: examples/records.md
+      - Alert triage: examples/injection.md
+  - API reference: reference.md
+  - FAQ: faq.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: logo.svg
+  favicon: favicon.svg
+  features:
+    - content.code.copy
+    - navigation.sections
+    - navigation.footer
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+          options:
+            docstring_style: google
+            members_order: source
+            show_root_heading: true
+            show_source: false
+            show_signature_annotations: true
+            separate_signature: true
+            merge_init_into_class: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: [docs]
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0.16.11/dist/katex.min.js
+  - https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js
+
+extra_css:
+  - stylesheets/site.css
+  - stylesheets/home.css
+  - https://unpkg.com/katex@0.16.11/dist/katex.min.css

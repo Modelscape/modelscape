@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ms" viewBox="0 0 720 150" role="img" aria-labelledby="ms-pipeline-t ms-pipeline-d">
+  <title id="ms-pipeline-t">From task to results</title>
+  <desc id="ms-pipeline-d">A seed task is varied into checked variants, realized as prompts, sent to each target repeatedly, scored by measures, and summarized as results.</desc>
+  <style>
+    svg.ms{--ink:var(--md-default-fg-color,#1f2328);--mute:var(--md-default-fg-color--light,#6e7781);--rule:var(--md-default-fg-color--lighter,#c8ccd1);--fill:var(--md-code-bg-color,#f5f6f8);--acc:#4c6ef5;--hot:#e8590c}
+    @media (prefers-color-scheme:dark){svg.ms{--ink:var(--md-default-fg-color,#e6edf3);--mute:var(--md-default-fg-color--light,#9198a1);--rule:var(--md-default-fg-color--lighter,#3d444d);--fill:var(--md-code-bg-color,#1c2128);--acc:#748ffc;--hot:#ff922b}}
+    svg.ms text{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+    svg.ms .c{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+    svg.ms .s{font-size:11px}
+    svg.ms .h{font-weight:600}
+    svg.ms .mu{fill:var(--mute)}
+    svg.ms .ac{fill:var(--acc)}
+    svg.ms .ho{fill:var(--hot)}
+    svg.ms .box{fill:var(--fill);stroke:var(--rule)}
+    svg.ms .hot{fill:none;stroke:var(--hot)}
+    svg.ms .hz{fill:var(--hot);opacity:.1}
+    svg.ms .az{fill:var(--acc);opacity:.15}
+    svg.ms .ln{fill:none;stroke:var(--mute);stroke-width:1.5}
+    svg.ms .rl{fill:none;stroke:var(--rule)}
+    svg.ms .al{fill:none;stroke:var(--acc);stroke-width:2}
+    svg.ms .ah{fill:var(--mute)}
+    svg.ms .gr{fill:var(--rule)}
+  </style>
+  <defs>
+    <marker id="ms-pipeline-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9z" class="ah"/>
+    </marker>
+  </defs>
+  <text x="180" y="16" text-anchor="middle" class="s mu">Task language</text>
+  <path d="M10 24H350" class="rl"/>
+  <text x="480" y="16" text-anchor="middle" class="s mu">Experiment</text>
+  <path d="M370 24H590" class="rl"/>
+  <text x="660" y="16" text-anchor="middle" class="s mu">Analysis</text>
+  <path d="M610 24H710" class="rl"/>
+  <rect x="10" y="48" width="100" height="44" rx="6" class="box"/>
+  <text x="60" y="75" text-anchor="middle">Seed task</text>
+  <text x="60" y="116" text-anchor="middle" class="c mu">Task</text>
+  <text x="60" y="132" text-anchor="middle" class="c mu">@attribute</text>
+  <rect x="138" y="40" width="92" height="44" rx="6" class="box"/>
+  <rect x="134" y="44" width="92" height="44" rx="6" class="box"/>
+  <rect x="130" y="48" width="92" height="44" rx="6" class="box"/>
+  <text x="176" y="75" text-anchor="middle">Variants</text>
+  <text x="176" y="116" text-anchor="middle" class="c mu">Axis</text>
+  <text x="176" y="132" text-anchor="middle" class="c mu">@perturbation</text>
+  <path d="M112 70H126" class="ln" marker-end="url(#ms-pipeline-a)"/>
+  <rect x="258" y="40" width="92" height="44" rx="6" class="box"/>
+  <rect x="254" y="44" width="92" height="44" rx="6" class="box"/>
+  <rect x="250" y="48" width="92" height="44" rx="6" class="box"/>
+  <text x="296" y="75" text-anchor="middle">Prompts</text>
+  <text x="296" y="116" text-anchor="middle" class="c mu">@realizer</text>
+  <path d="M232 70H246" class="ln" marker-end="url(#ms-pipeline-a)"/>
+  <rect x="378" y="40" width="92" height="44" rx="6" class="box"/>
+  <rect x="374" y="44" width="92" height="44" rx="6" class="box"/>
+  <rect x="370" y="48" width="92" height="44" rx="6" class="box"/>
+  <text x="416" y="75" text-anchor="middle">Outputs</text>
+  <text x="416" y="116" text-anchor="middle" class="c mu">Target</text>
+  <text x="416" y="132" text-anchor="middle" class="c mu">× repetitions</text>
+  <path d="M352 70H366" class="ln" marker-end="url(#ms-pipeline-a)"/>
+  <rect x="498" y="40" width="92" height="44" rx="6" class="box"/>
+  <rect x="494" y="44" width="92" height="44" rx="6" class="box"/>
+  <rect x="490" y="48" width="92" height="44" rx="6" class="box"/>
+  <text x="536" y="75" text-anchor="middle">Measures</text>
+  <text x="536" y="116" text-anchor="middle" class="c mu">metrics</text>
+  <text x="536" y="132" text-anchor="middle" class="c mu">differences</text>
+  <path d="M472 70H486" class="ln" marker-end="url(#ms-pipeline-a)"/>
+  <rect x="610" y="48" width="100" height="44" rx="6" class="box"/>
+  <text x="660" y="75" text-anchor="middle">Results</text>
+  <text x="660" y="116" text-anchor="middle" class="c mu">profile</text>
+  <text x="660" y="132" text-anchor="middle" class="c mu">scorecard</text>
+  <path d="M592 70H606" class="ln" marker-end="url(#ms-pipeline-a)"/>
+</svg>

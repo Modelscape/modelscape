@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  <section class="ms-hero">
+    <div class="ms-hero__inner md-grid">
+      <h1 class="ms-hero__title">What do a model's answers depend on?</h1>
+      <p class="ms-hero__tagline">Benchmarks report how often a model is right on a fixed set of questions. Modelscape perturbs structured tasks one attribute at a time and tests which attributes change the answer beyond sampling noise.</p>
+      <div class="ms-hero__actions md-typeset">
+        <a class="md-button md-button--primary" href="{{ 'quickstart/' | url }}">Get started</a>
+        <a class="md-button" href="{{ 'briefings/access.html' | url }}">See a report</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  {{ page.content }}
+{% endblock %}

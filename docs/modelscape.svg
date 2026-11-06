@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ms" viewBox="0 0 720 372" width="720" height="372" role="img" aria-labelledby="ms-hero-t ms-hero-d">
+  <title id="ms-hero-t">Evaluation versus behavioral mapping</title>
+  <desc id="ms-hero-d">A benchmark sends one task to a model and records one score. Modelscape changes one property of the task in checked steps, asks the model repeatedly at every step, and marks a candidate boundary where answers change beyond run-to-run noise.</desc>
+  <style>
+    svg.ms{--ink:var(--md-default-fg-color,#1f2328);--mute:var(--md-default-fg-color--light,#6e7781);--rule:var(--md-default-fg-color--lighter,#c8ccd1);--fill:var(--md-code-bg-color,#f5f6f8);--acc:#4c6ef5;--hot:#e8590c}
+    @media (prefers-color-scheme:dark){svg.ms{--ink:var(--md-default-fg-color,#e6edf3);--mute:var(--md-default-fg-color--light,#9198a1);--rule:var(--md-default-fg-color--lighter,#3d444d);--fill:var(--md-code-bg-color,#1c2128);--acc:#748ffc;--hot:#ff922b}}
+    svg.ms text{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+    svg.ms .c{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+    svg.ms .s{font-size:11px}
+    svg.ms .h{font-weight:600}
+    svg.ms .mu{fill:var(--mute)}
+    svg.ms .ho{fill:var(--hot)}
+    svg.ms .box{fill:var(--fill);stroke:var(--rule)}
+    svg.ms .ln{fill:none;stroke:var(--mute);stroke-width:1.5}
+    svg.ms .rl{fill:none;stroke:var(--rule)}
+    svg.ms .ah{fill:var(--mute)}
+    svg.ms .ac{fill:var(--acc)}
+    svg.ms .al{fill:none;stroke:var(--acc);stroke-width:2.5}
+    svg.ms .nz{fill:var(--rule);opacity:.6}
+    svg.ms .hz{fill:var(--hot);opacity:.12}
+  </style>
+  <defs>
+    <marker id="ms-hero-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9z" class="ah"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="24" class="h">Benchmark</text>
+  <g text-anchor="middle">
+    <rect x="20" y="40" width="120" height="40" rx="6" class="box"/>
+    <text x="80" y="65">Task</text>
+    <rect x="180" y="40" width="120" height="40" rx="6" class="box"/>
+    <text x="240" y="65">Model</text>
+    <rect x="340" y="40" width="120" height="40" rx="6" class="box"/>
+    <text x="400" y="65">Answer</text>
+    <rect x="500" y="40" width="120" height="40" rx="6" class="box"/>
+    <text x="560" y="65">Score 0.92</text>
+  </g>
+  <g class="ln" marker-end="url(#ms-hero-a)">
+    <path d="M142 60H176"/>
+    <path d="M302 60H336"/>
+    <path d="M462 60H496"/>
+  </g>
+  <text x="636" y="65" class="mu">one number</text>
+
+  <path d="M20 106H700" class="rl"/>
+
+  <text x="20" y="136" class="h">Modelscape</text>
+  <g text-anchor="middle" class="s mu">
+    <text x="80" y="160">checked steps</text>
+    <text x="260" y="160">asked repeatedly</text>
+    <text x="555" y="160">change from baseline</text>
+  </g>
+  <rect x="20" y="170" width="120" height="132" rx="6" class="box"/>
+  <g text-anchor="middle" class="c">
+    <text x="80" y="191">pressure 0</text>
+    <text x="80" y="215">pressure 1</text>
+    <text x="80" y="239">pressure 2</text>
+    <text x="80" y="263">pressure 3</text>
+    <text x="80" y="287">pressure 4</text>
+  </g>
+  <rect x="200" y="216" width="120" height="40" rx="6" class="box"/>
+  <text x="260" y="241" text-anchor="middle">Model × 5 runs</text>
+  <g class="ln" marker-end="url(#ms-hero-a)">
+    <path d="M142 236H196"/>
+    <path d="M322 236H376"/>
+  </g>
+
+  <rect x="560" y="172" width="65" height="128" class="hz"/>
+  <g text-anchor="middle" class="s ho">
+    <text x="592" y="188">candidate</text>
+    <text x="592" y="201">boundary</text>
+  </g>
+  <polygon points="430,300 690,300 690,262 625,265 560,268 495,270 430,272" class="nz"/>
+  <path d="M400 172V300H710" class="rl"/>
+  <polyline points="430,292 495,289 560,284 625,226 690,214" class="al"/>
+  <g class="ac">
+    <circle cx="430" cy="292" r="4"/>
+    <circle cx="495" cy="289" r="4"/>
+    <circle cx="560" cy="284" r="4"/>
+    <circle cx="625" cy="226" r="4"/>
+    <circle cx="690" cy="214" r="4"/>
+  </g>
+  <g text-anchor="middle" class="s mu">
+    <text x="430" y="316">0</text>
+    <text x="495" y="316">1</text>
+    <text x="560" y="316">2</text>
+    <text x="625" y="316">3</text>
+    <text x="690" y="316">4</text>
+    <text x="560" y="334">pressure</text>
+  </g>
+
+  <g class="s">
+    <path d="M400 356H420" class="al"/>
+    <text x="426" y="360">answer change</text>
+    <rect x="540" y="350" width="20" height="11" class="nz"/>
+    <text x="566" y="360">run-to-run noise</text>
+  </g>
+</svg>
