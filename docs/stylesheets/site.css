@@ -1,0 +1,82 @@
+.md-typeset figure.diagram {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5em 0;
+}
+
+.md-typeset .diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-nav--primary .md-nav[data-md-level="1"] > .md-nav__list {
+    margin-left: 0.6rem;
+    padding-left: 0.6rem;
+    border-left: 0.05rem solid var(--md-default-fg-color--lightest);
+  }
+}
+
+.md-header__inner {
+  padding-block: 0.2rem;
+}
+
+.md-tabs__list {
+  display: flex;
+}
+
+.md-tabs__item:last-child {
+  margin-left: auto;
+}
+
+.md-footer__inner {
+  padding: 1rem 0.8rem;
+}
+
+.md-footer__link {
+  flex-grow: 0;
+  align-items: center;
+  margin: 0;
+  padding: 0.4rem 0.6rem;
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  transition:
+    border-color 0.25s,
+    color 0.25s;
+}
+
+.md-footer__link:hover,
+.md-footer__link:focus {
+  color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  opacity: 1;
+}
+
+.md-footer__title {
+  flex-grow: 0;
+  max-width: none;
+  margin-bottom: 0;
+  padding: 0 0.6rem;
+}
+
+.md-footer__button {
+  margin: 0;
+  padding: 0.2rem;
+}
+
+.md-typeset .ms-i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-family: Georgia, serif;
+  font-size: 0.75em;
+  font-style: italic;
+  font-weight: 600;
+  vertical-align: 0.1em;
+}

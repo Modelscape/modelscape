@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ms" viewBox="0 0 720 196" role="img" aria-labelledby="ms-scorecard-t ms-scorecard-d">
+  <title id="ms-scorecard-t">Spurious and missed change</title>
+  <desc id="ms-scorecard-d">If the correct answer stays but the model's answer changes beyond noise, that is spurious change. If the correct answer changes but the model's answer stays, that is missed change.</desc>
+  <style>
+    svg.ms{--ink:var(--md-default-fg-color,#1f2328);--mute:var(--md-default-fg-color--light,#6e7781);--rule:var(--md-default-fg-color--lighter,#c8ccd1);--fill:var(--md-code-bg-color,#f5f6f8);--acc:#4c6ef5;--hot:#e8590c}
+    @media (prefers-color-scheme:dark){svg.ms{--ink:var(--md-default-fg-color,#e6edf3);--mute:var(--md-default-fg-color--light,#9198a1);--rule:var(--md-default-fg-color--lighter,#3d444d);--fill:var(--md-code-bg-color,#1c2128);--acc:#748ffc;--hot:#ff922b}}
+    svg.ms text{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+    svg.ms .c{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+    svg.ms .s{font-size:11px}
+    svg.ms .h{font-weight:600}
+    svg.ms .mu{fill:var(--mute)}
+    svg.ms .ac{fill:var(--acc)}
+    svg.ms .ho{fill:var(--hot)}
+    svg.ms .box{fill:var(--fill);stroke:var(--rule)}
+    svg.ms .hot{fill:none;stroke:var(--hot)}
+    svg.ms .hz{fill:var(--hot);opacity:.1}
+    svg.ms .az{fill:var(--acc);opacity:.15}
+    svg.ms .ln{fill:none;stroke:var(--mute);stroke-width:1.5}
+    svg.ms .rl{fill:none;stroke:var(--rule)}
+    svg.ms .al{fill:none;stroke:var(--acc);stroke-width:2}
+    svg.ms .ah{fill:var(--mute)}
+    svg.ms .gr{fill:var(--rule)}
+  </style>
+  <defs>
+    <marker id="ms-scorecard-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9z" class="ah"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle" class="s mu">
+    <text x="355" y="22">model answer stays</text>
+    <text x="595" y="22">model answer changes beyond noise</text>
+  </g>
+  <text x="20" y="64">correct answer stays</text>
+  <text x="20" y="82" class="s mu">invariant axis, e.g. pressure</text>
+  <text x="20" y="144">correct answer changes</text>
+  <text x="20" y="162" class="s mu">causal axis, e.g. amount</text>
+
+  <rect x="240" y="34" width="230" height="70" rx="6" class="box"/>
+  <text x="355" y="74" text-anchor="middle" class="mu"><tspan class="ac">✓</tspan> robust</text>
+
+  <rect x="480" y="34" width="230" height="70" rx="6" class="hz"/>
+  <rect x="480" y="34" width="230" height="70" rx="6" class="hot"/>
+  <text x="595" y="66" text-anchor="middle" class="h ho">spurious change</text>
+  <text x="595" y="84" text-anchor="middle" class="s mu">ideal 0</text>
+
+  <rect x="240" y="114" width="230" height="70" rx="6" class="hz"/>
+  <rect x="240" y="114" width="230" height="70" rx="6" class="hot"/>
+  <text x="355" y="146" text-anchor="middle" class="h ho">missed change</text>
+  <text x="355" y="164" text-anchor="middle" class="s mu">ideal 0</text>
+
+  <rect x="480" y="114" width="230" height="70" rx="6" class="box"/>
+  <text x="595" y="154" text-anchor="middle" class="mu"><tspan class="ac">✓</tspan> tracks the task</text>
+</svg>

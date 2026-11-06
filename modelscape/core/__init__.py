@@ -1,0 +1,85 @@
+"""Serializable domain records and task-space geometry. Depends on nothing else in modelscape."""
+
+from modelscape.core.coordinates import (
+    AxisSpec,
+    Coordinate,
+    CoordinateSystem,
+    NeighborPair,
+    Scale,
+    same_value,
+)
+from modelscape.core.errors import (
+    AnalysisError,
+    ControlViolationError,
+    ExperimentError,
+    MeasureError,
+    ModelscapeError,
+    PerturbationError,
+    ReportError,
+    RequirementError,
+    ScenarioError,
+    SchemaError,
+    SpecError,
+    StoreError,
+    TaskSpaceError,
+)
+from modelscape.core.experiments import Design, ExperimentRecord, Grid, RunManifest, Sweep
+from modelscape.core.identity import Identity
+from modelscape.core.measurements import DifferenceMeasurement, MeasureValue, PointMeasurement
+from modelscape.core.observations import (
+    Message,
+    Observation,
+    Prompt,
+    TargetError,
+    TargetOutput,
+    TargetRequest,
+    Usage,
+)
+from modelscape.core.serialization import AxisValue, JsonObject, canonical_json, content_hash
+from modelscape.core.tasks import AttributeSchema, PerturbationStep, TaskSchema, Variant
+
+__all__ = [
+    "AnalysisError",
+    "AttributeSchema",
+    "AxisSpec",
+    "AxisValue",
+    "ControlViolationError",
+    "Coordinate",
+    "CoordinateSystem",
+    "Design",
+    "DifferenceMeasurement",
+    "ExperimentError",
+    "ExperimentRecord",
+    "Grid",
+    "Identity",
+    "JsonObject",
+    "MeasureError",
+    "MeasureValue",
+    "Message",
+    "ModelscapeError",
+    "NeighborPair",
+    "Observation",
+    "PerturbationError",
+    "PerturbationStep",
+    "PointMeasurement",
+    "Prompt",
+    "ReportError",
+    "RequirementError",
+    "RunManifest",
+    "Scale",
+    "ScenarioError",
+    "SchemaError",
+    "SpecError",
+    "StoreError",
+    "Sweep",
+    "TargetError",
+    "TargetOutput",
+    "TargetRequest",
+    "TaskSchema",
+    "TaskSpaceError",
+    "Usage",
+    "Variant",
+    "canonical_json",
+    "content_hash",
+    "same_value",
+]

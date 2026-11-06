@@ -1,0 +1,404 @@
+{
+  "grid-outage": {
+    "task": {
+      "question": "Why did the Halvern regional grid lose power on the evening of 12 March?",
+      "hypotheses": [
+        {
+          "key": "H1",
+          "statement": "Equipment failure at the Kessel substation transformer."
+        },
+        {
+          "key": "H2",
+          "statement": "Deliberate interference with the grid control system."
+        },
+        {
+          "key": "H3",
+          "statement": "An operator scheduling error during maintenance."
+        }
+      ],
+      "leading": "H1",
+      "reports": [
+        {
+          "id": "E1",
+          "claim": "The Kessel transformer inspection was 14 months overdue.",
+          "source": "utility records",
+          "reliability": "high",
+          "supports": "H1"
+        },
+        {
+          "id": "E2",
+          "claim": "Thermal imaging recorded a transformer hotspot two weeks earlier.",
+          "source": "contractor report",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E3",
+          "claim": "The manufacturer warned of insulation faults in this model.",
+          "source": "vendor bulletin",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E4",
+          "claim": "Residents reported a loud bang near the substation.",
+          "source": "local news",
+          "reliability": "low",
+          "supports": "H1"
+        },
+        {
+          "id": "E5",
+          "claim": "A monitoring firm saw anomalous remote logins that evening.",
+          "source": "security vendor",
+          "reliability": "low",
+          "supports": "H2"
+        }
+      ]
+    },
+    "rivals": [
+      {
+        "claim": "The regulator's preliminary note mentions unexplained control-system alarms.",
+        "source": "regulator"
+      },
+      {
+        "claim": "An anonymous post claims a group disabled the grid remotely.",
+        "source": "online forum"
+      }
+    ]
+  },
+  "river-contamination": {
+    "task": {
+      "question": "What caused the fish deaths along the lower Aster River in June?",
+      "hypotheses": [
+        {
+          "key": "H1",
+          "statement": "An unpermitted discharge from the Marrow industrial park."
+        },
+        {
+          "key": "H2",
+          "statement": "Fertilizer runoff after heavy rain."
+        },
+        {
+          "key": "H3",
+          "statement": "A natural algal bloom during the heatwave."
+        }
+      ],
+      "leading": "H1",
+      "reports": [
+        {
+          "id": "E1",
+          "claim": "Samples below the industrial outfall show elevated solvents.",
+          "source": "environment agency",
+          "reliability": "high",
+          "supports": "H1"
+        },
+        {
+          "id": "E2",
+          "claim": "Deaths begin abruptly downstream of the park.",
+          "source": "field survey",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E3",
+          "claim": "A park tenant was fined last year for a similar discharge.",
+          "source": "court records",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E4",
+          "claim": "Anglers reported an oily sheen near the outfall.",
+          "source": "angling club",
+          "reliability": "low",
+          "supports": "H1"
+        },
+        {
+          "id": "E5",
+          "claim": "Nitrate levels upstream of the park doubled after the storm.",
+          "source": "water utility",
+          "reliability": "low",
+          "supports": "H2"
+        }
+      ]
+    },
+    "rivals": [
+      {
+        "claim": "Drainage maps show heavy farm runoff into the affected stretch.",
+        "source": "agriculture board"
+      },
+      {
+        "claim": "A farmers' group acknowledged late fertilizer spreading.",
+        "source": "press release"
+      }
+    ]
+  },
+  "port-congestion": {
+    "task": {
+      "question": "Why are container vessels queuing outside Port Selby?",
+      "hypotheses": [
+        {
+          "key": "H1",
+          "statement": "An outage of the customs clearance system."
+        },
+        {
+          "key": "H2",
+          "statement": "An unannounced work slowdown by crane operators."
+        },
+        {
+          "key": "H3",
+          "statement": "Storm damage to the outer berths."
+        }
+      ],
+      "leading": "H1",
+      "reports": [
+        {
+          "id": "E1",
+          "claim": "The customs authority confirmed a clearance system failure.",
+          "source": "customs authority",
+          "reliability": "high",
+          "supports": "H1"
+        },
+        {
+          "id": "E2",
+          "claim": "Shipping agents report containers held pending clearance.",
+          "source": "agent bulletin",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E3",
+          "claim": "Berth occupancy is normal while gate throughput fell.",
+          "source": "port statistics",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E4",
+          "claim": "A trucker video shows long gate queues.",
+          "source": "social media",
+          "reliability": "low",
+          "supports": "H1"
+        },
+        {
+          "id": "E5",
+          "claim": "Crane productivity per shift fell by half this week.",
+          "source": "terminal operator",
+          "reliability": "low",
+          "supports": "H2"
+        }
+      ]
+    },
+    "rivals": [
+      {
+        "claim": "The dockworkers' union called for a work-to-rule action.",
+        "source": "union statement"
+      },
+      {
+        "claim": "A shipping newsletter cites a dispute over overtime pay.",
+        "source": "industry newsletter"
+      }
+    ]
+  },
+  "warehouse-fire": {
+    "task": {
+      "question": "What started the fire at the Dunmore logistics warehouse on 3 August?",
+      "hypotheses": [
+        {
+          "key": "H1",
+          "statement": "An electrical fault in the forklift charging area."
+        },
+        {
+          "key": "H2",
+          "statement": "Arson by an intruder."
+        },
+        {
+          "key": "H3",
+          "statement": "Improperly stored cleaning chemicals."
+        }
+      ],
+      "leading": "H1",
+      "reports": [
+        {
+          "id": "E1",
+          "claim": "Fire investigators traced the point of origin to a charging station.",
+          "source": "fire service",
+          "reliability": "high",
+          "supports": "H1"
+        },
+        {
+          "id": "E2",
+          "claim": "Maintenance logs show repeated breaker trips at the charging bay.",
+          "source": "facility records",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E3",
+          "claim": "An electrician flagged frayed charger cables during an audit in May.",
+          "source": "insurance audit",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E4",
+          "claim": "A night-shift worker remembers a burning plastic smell near the chargers.",
+          "source": "staff interview",
+          "reliability": "low",
+          "supports": "H1"
+        },
+        {
+          "id": "E5",
+          "claim": "A neighbor says the side gate was open that night.",
+          "source": "local news",
+          "reliability": "low",
+          "supports": "H2"
+        }
+      ]
+    },
+    "rivals": [
+      {
+        "claim": "Police found a broken padlock on the rear loading door.",
+        "source": "police report"
+      },
+      {
+        "claim": "An anonymous caller claimed someone had threatened to burn the building.",
+        "source": "tip line"
+      }
+    ]
+  },
+  "crop-failure": {
+    "task": {
+      "question": "Why did the wheat harvest in the Varen valley fail this summer?",
+      "hypotheses": [
+        {
+          "key": "H1",
+          "statement": "An outbreak of stem rust."
+        },
+        {
+          "key": "H2",
+          "statement": "A contaminated batch of seed."
+        },
+        {
+          "key": "H3",
+          "statement": "Drought during the growing season."
+        }
+      ],
+      "leading": "H1",
+      "reports": [
+        {
+          "id": "E1",
+          "claim": "Laboratory tests found stem rust spores on most sampled plants.",
+          "source": "agricultural laboratory",
+          "reliability": "high",
+          "supports": "H1"
+        },
+        {
+          "id": "E2",
+          "claim": "Field surveys mapped rust lesions across the affected farms.",
+          "source": "extension service",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E3",
+          "claim": "Neighboring regions confirmed a rust outbreak in the same weeks.",
+          "source": "regional bulletin",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E4",
+          "claim": "Farmers posted photos of orange pustules on their stems.",
+          "source": "farmers' forum",
+          "reliability": "low",
+          "supports": "H1"
+        },
+        {
+          "id": "E5",
+          "claim": "Several affected farms bought seed from the same supplier.",
+          "source": "trade gossip",
+          "reliability": "low",
+          "supports": "H2"
+        }
+      ]
+    },
+    "rivals": [
+      {
+        "claim": "The seed supplier recalled one batch for low germination rates.",
+        "source": "supplier notice"
+      },
+      {
+        "claim": "A cooperative memo questions the purity of this year's seed.",
+        "source": "cooperative memo"
+      }
+    ]
+  },
+  "banking-outage": {
+    "task": {
+      "question": "Why was Corvel Bank's online banking down for six hours on 9 February?",
+      "hypotheses": [
+        {
+          "key": "H1",
+          "statement": "A faulty software update to the login service."
+        },
+        {
+          "key": "H2",
+          "statement": "A distributed denial-of-service attack."
+        },
+        {
+          "key": "H3",
+          "statement": "A cooling failure in the primary data center."
+        }
+      ],
+      "leading": "H1",
+      "reports": [
+        {
+          "id": "E1",
+          "claim": "The bank's incident report names a login service update deployed that morning.",
+          "source": "bank incident report",
+          "reliability": "high",
+          "supports": "H1"
+        },
+        {
+          "id": "E2",
+          "claim": "Deployment logs show the outage began four minutes after the update.",
+          "source": "internal logs",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E3",
+          "claim": "Service returned when the update was rolled back.",
+          "source": "status page",
+          "reliability": "medium",
+          "supports": "H1"
+        },
+        {
+          "id": "E4",
+          "claim": "A developer forum thread discusses a bug in the new login release.",
+          "source": "developer forum",
+          "reliability": "low",
+          "supports": "H1"
+        },
+        {
+          "id": "E5",
+          "claim": "A traffic monitor saw an unusual spike in requests that day.",
+          "source": "monitoring service",
+          "reliability": "low",
+          "supports": "H2"
+        }
+      ]
+    },
+    "rivals": [
+      {
+        "claim": "A security firm detected botnet traffic aimed at the bank's domain.",
+        "source": "security firm"
+      },
+      {
+        "claim": "A hacker group claimed responsibility on social media.",
+        "source": "social media"
+      }
+    ]
+  }
+}

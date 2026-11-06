@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ms" viewBox="0 0 720 210" role="img" aria-labelledby="ms-noise-t ms-noise-d">
+  <title id="ms-noise-t">Between, within, and excess</title>
+  <desc id="ms-noise-d">At pressure 0 all five answers are approve; at pressure 2, four of five are escalate. Answers differ 0.8 of the time between conditions and 0.2 within them, so the excess change is 0.6.</desc>
+  <style>
+    svg.ms{--ink:var(--md-default-fg-color,#1f2328);--mute:var(--md-default-fg-color--light,#6e7781);--rule:var(--md-default-fg-color--lighter,#c8ccd1);--fill:var(--md-code-bg-color,#f5f6f8);--acc:#4c6ef5;--hot:#e8590c}
+    @media (prefers-color-scheme:dark){svg.ms{--ink:var(--md-default-fg-color,#e6edf3);--mute:var(--md-default-fg-color--light,#9198a1);--rule:var(--md-default-fg-color--lighter,#3d444d);--fill:var(--md-code-bg-color,#1c2128);--acc:#748ffc;--hot:#ff922b}}
+    svg.ms text{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+    svg.ms .c{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+    svg.ms .s{font-size:11px}
+    svg.ms .h{font-weight:600}
+    svg.ms .mu{fill:var(--mute)}
+    svg.ms .ac{fill:var(--acc)}
+    svg.ms .ho{fill:var(--hot)}
+    svg.ms .box{fill:var(--fill);stroke:var(--rule)}
+    svg.ms .hot{fill:none;stroke:var(--hot)}
+    svg.ms .hz{fill:var(--hot);opacity:.1}
+    svg.ms .az{fill:var(--acc);opacity:.15}
+    svg.ms .ln{fill:none;stroke:var(--mute);stroke-width:1.5}
+    svg.ms .rl{fill:none;stroke:var(--rule)}
+    svg.ms .al{fill:none;stroke:var(--acc);stroke-width:2}
+    svg.ms .ah{fill:var(--mute)}
+    svg.ms .gr{fill:var(--rule)}
+  </style>
+  <defs>
+    <marker id="ms-noise-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9z" class="ah"/>
+    </marker>
+  </defs>
+  <text x="115" y="24" text-anchor="middle" class="c">pressure 0</text>
+  <rect x="70" y="38" width="90" height="22" rx="4" class="box"/>
+  <text x="115" y="53" text-anchor="middle" class="s">approve</text>
+  <rect x="70" y="66" width="90" height="22" rx="4" class="box"/>
+  <text x="115" y="81" text-anchor="middle" class="s">approve</text>
+  <rect x="70" y="94" width="90" height="22" rx="4" class="box"/>
+  <text x="115" y="109" text-anchor="middle" class="s">approve</text>
+  <rect x="70" y="122" width="90" height="22" rx="4" class="box"/>
+  <text x="115" y="137" text-anchor="middle" class="s">approve</text>
+  <rect x="70" y="150" width="90" height="22" rx="4" class="box"/>
+  <text x="115" y="165" text-anchor="middle" class="s">approve</text>
+  <text x="295" y="24" text-anchor="middle" class="c">pressure 2</text>
+  <rect x="250" y="38" width="90" height="22" rx="4" class="box"/>
+  <text x="295" y="53" text-anchor="middle" class="s">approve</text>
+  <rect x="250" y="66" width="90" height="22" rx="4" class="hot"/>
+  <text x="295" y="81" text-anchor="middle" class="s ho">escalate</text>
+  <rect x="250" y="94" width="90" height="22" rx="4" class="hot"/>
+  <text x="295" y="109" text-anchor="middle" class="s ho">escalate</text>
+  <rect x="250" y="122" width="90" height="22" rx="4" class="hot"/>
+  <text x="295" y="137" text-anchor="middle" class="s ho">escalate</text>
+  <rect x="250" y="150" width="90" height="22" rx="4" class="hot"/>
+  <text x="295" y="165" text-anchor="middle" class="s ho">escalate</text>
+  <path d="M56 38V170M60 38H56M60 170H56M354 38V170M350 38H354M350 170H354" class="rl"/>
+  <text x="44" y="104" text-anchor="middle" class="s mu" transform="rotate(-90 44 104)">within</text>
+  <text x="366" y="104" text-anchor="middle" class="s mu" transform="rotate(90 366 104)">within</text>
+  <path d="M166 104H244" class="ln" marker-start="url(#ms-noise-a)" marker-end="url(#ms-noise-a)"/>
+  <text x="205" y="96" text-anchor="middle" class="s mu">between</text>
+  <text x="210" y="198" text-anchor="middle" class="s mu">one case, 5 repetitions each</text>
+
+  <g>
+    <text x="420" y="24" class="s mu">mean answer change</text>
+    <text x="420" y="60">between</text>
+    <rect x="490" y="48" width="160" height="16" rx="3" class="gr"/>
+    <text x="658" y="61" class="c">0.8</text>
+    <text x="420" y="96">within</text>
+    <rect x="490" y="84" width="40" height="16" rx="3" class="gr"/>
+    <text x="538" y="97" class="c">0.2</text>
+    <text x="420" y="132" class="h">excess</text>
+    <rect x="530" y="120" width="120" height="16" rx="3" class="ac"/>
+    <text x="658" y="133" class="c h">0.6</text>
+    <path d="M530 102V118" class="rl" stroke-dasharray="3 3"/>
+    <text x="420" y="170" class="s mu">change caused by the step, beyond noise</text>
+    <text x="420" y="188" class="s mu">bootstrap interval · permutation p-value</text>
+  </g>
+</svg>

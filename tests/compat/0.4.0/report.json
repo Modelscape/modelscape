@@ -1,0 +1,1026 @@
+{
+  "scenario": {
+    "name": "compat",
+    "version": "1",
+    "parameters": {}
+  },
+  "experiment": "576c07ad61bc1620c43e43d821a32b74",
+  "scorecards": [
+    {
+      "target": "callable:steady",
+      "group": "all",
+      "cases": [
+        "shipping records",
+        "border logs"
+      ],
+      "accuracy": {
+        "value": 1.0,
+        "lower": 1.0,
+        "upper": 1.0
+      },
+      "answered": 1.0,
+      "spurious_change": 0.0,
+      "missed_change": 0.0,
+      "axes": [
+        {
+          "axis": "role",
+          "scale": "nominal",
+          "role": "invariant",
+          "accuracy": [
+            {
+              "target": "callable:steady",
+              "metric": "correct",
+              "coordinate": {
+                "role": "none",
+                "marker.classification": "SECRET"
+              },
+              "estimate": {
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0
+              },
+              "cases": 2,
+              "observations": 6,
+              "sampling_unit": "case",
+              "per_case": [
+                {
+                  "case": "shipping records",
+                  "value": 1.0,
+                  "observations": 3
+                },
+                {
+                  "case": "border logs",
+                  "value": 1.0,
+                  "observations": 3
+                }
+              ],
+              "measurement_ids": [
+                "1f7a32549e03fdfd47ad010e42bbfacb",
+                "f73be32e3bc004a82e97023e75e0abc6",
+                "0b090d7882c3d59bf85d52a9fedef3bd",
+                "1ec237e0b1590325c973e38363afa92b",
+                "a7dfd2b35ff64be17b965c59d21e246b",
+                "e639b6ca041a24c5a3ea6586a0b29800"
+              ]
+            },
+            {
+              "target": "callable:steady",
+              "metric": "correct",
+              "coordinate": {
+                "role": "director",
+                "marker.classification": "SECRET"
+              },
+              "estimate": {
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0
+              },
+              "cases": 2,
+              "observations": 6,
+              "sampling_unit": "case",
+              "per_case": [
+                {
+                  "case": "shipping records",
+                  "value": 1.0,
+                  "observations": 3
+                },
+                {
+                  "case": "border logs",
+                  "value": 1.0,
+                  "observations": 3
+                }
+              ],
+              "measurement_ids": [
+                "9cb6bae7084c1d3a22a8d00f01261603",
+                "3c0fa223003456fb31fc7996c25aee61",
+                "a2f6686816ebb8fd469632a33c2f25fe",
+                "2f47f8c032049d6fabd5f9b687083a9d",
+                "7b3fb10dc71e753f38e8edfeefd50c25",
+                "c9a577dddcf03271b1abde212d5955d7"
+              ]
+            }
+          ],
+          "shifts": [],
+          "threshold": null
+        },
+        {
+          "axis": "marker.classification",
+          "scale": "nominal",
+          "role": "causal",
+          "accuracy": [
+            {
+              "target": "callable:steady",
+              "metric": "correct",
+              "coordinate": {
+                "role": "none",
+                "marker.classification": "SECRET"
+              },
+              "estimate": {
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0
+              },
+              "cases": 2,
+              "observations": 6,
+              "sampling_unit": "case",
+              "per_case": [
+                {
+                  "case": "shipping records",
+                  "value": 1.0,
+                  "observations": 3
+                },
+                {
+                  "case": "border logs",
+                  "value": 1.0,
+                  "observations": 3
+                }
+              ],
+              "measurement_ids": [
+                "1f7a32549e03fdfd47ad010e42bbfacb",
+                "f73be32e3bc004a82e97023e75e0abc6",
+                "0b090d7882c3d59bf85d52a9fedef3bd",
+                "1ec237e0b1590325c973e38363afa92b",
+                "a7dfd2b35ff64be17b965c59d21e246b",
+                "e639b6ca041a24c5a3ea6586a0b29800"
+              ]
+            },
+            {
+              "target": "callable:steady",
+              "metric": "correct",
+              "coordinate": {
+                "role": "none",
+                "marker.classification": "OFFICIAL"
+              },
+              "estimate": {
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0
+              },
+              "cases": 2,
+              "observations": 6,
+              "sampling_unit": "case",
+              "per_case": [
+                {
+                  "case": "shipping records",
+                  "value": 1.0,
+                  "observations": 3
+                },
+                {
+                  "case": "border logs",
+                  "value": 1.0,
+                  "observations": 3
+                }
+              ],
+              "measurement_ids": [
+                "2f206c047e1c78664789df6c702ca5dd",
+                "3458fa89fd1716172cabb6388b046731",
+                "8c2bca2e676ba4aee45fd821d7cabaa9",
+                "b80f45befab030269543f5163d68fcbb",
+                "7ef360c42b31db7bc6ae1842faf9b2e8",
+                "87419960617b4d4e74e45fedca61e17f"
+              ]
+            }
+          ],
+          "shifts": [
+            {
+              "transition": {
+                "target": "callable:steady",
+                "versus": null,
+                "measure": "answer_change",
+                "view": "baseline",
+                "axis": "marker.classification",
+                "start": {
+                  "role": "none",
+                  "marker.classification": "SECRET"
+                },
+                "end": {
+                  "role": "none",
+                  "marker.classification": "OFFICIAL"
+                },
+                "between": {
+                  "value": 1.0,
+                  "lower": 1.0,
+                  "upper": 1.0
+                },
+                "within": {
+                  "value": 0.0,
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "excess": {
+                  "value": 1.0,
+                  "lower": 1.0,
+                  "upper": 1.0
+                },
+                "p_value": 0.004995004995004995,
+                "cases": 2,
+                "observations": 12,
+                "sampling_unit": "case",
+                "per_case": [
+                  {
+                    "case": "shipping records",
+                    "between": 1.0,
+                    "within": 0.0,
+                    "excess": 1.0,
+                    "observations": 6
+                  },
+                  {
+                    "case": "border logs",
+                    "between": 1.0,
+                    "within": 0.0,
+                    "excess": 1.0,
+                    "observations": 6
+                  }
+                ],
+                "measurement_ids": [
+                  "7d8173340917b275f97f18585d8d5958",
+                  "1beec27d4ea6ef935cbf1c558d04edd7",
+                  "37dd29b0bd0a900ba8fbaa9f530a279b",
+                  "635bc3b1f60a26cfc90d06aa07c88233",
+                  "be04f89be0f3aaea916372dd732cdee9",
+                  "c13fde9266ef2099fcfb86901ab9c9dc",
+                  "c9d405c705af1b6e3124e8717becfe01",
+                  "0f10d700bedfcacec8542703d59b5cdf",
+                  "6300ae75db2c478759ac6832290a71e0",
+                  "f7e765910fbb1de2d26caa9adcd1d5ca",
+                  "a73236bc0f075ae5ef575db5ad274138",
+                  "62740d3dfdfc2554e5c83030a9ca6e05",
+                  "ab8523501be48d92689ebed4094efd35",
+                  "e54435a95111f5761039e2caea418ad0",
+                  "1dabd6db5dc93e1dd2c69db09609e83e",
+                  "6478670c8c1ce7ea933382f5135ea40a",
+                  "a6bfa44a80c4fa7f881b520b706ffd7e",
+                  "9f09c9ea1a83afafc359eb2a7a15b37f",
+                  "1357f7b5cb43d9fe27ceb3029c63f8af",
+                  "e0ec179563d2d2c7927deaa9d1e8d20d",
+                  "41d5145d86b5bc50de1dd203b186f598",
+                  "ed599175a33e18f2c144713abb8ffe51",
+                  "87d5d768014b881e336d5d7fba3674e4",
+                  "25b35d08efa7b5b7205bcfc5e885de65",
+                  "77411fcb581c71263340efc86b00ee82",
+                  "7fc2044c415c4376f9e157f70f1ef878",
+                  "f4e1610e79fa26874fd02e984a2d257e",
+                  "8de2ebc9102f31a39f31881c598f8728",
+                  "16e29fb14d6c8b3a294ab6e1445d9e3d",
+                  "ddc7843c1fb985b5c472ef76cb344f79"
+                ]
+              },
+              "adjusted_p_value": 0.004995004995004995,
+              "criterion": {
+                "alpha": 0.05,
+                "min_excess": 0.0
+              },
+              "rationale": "Excess change 1.000 is above 0.000, and the Holm-corrected permutation p-value 0.005 is at most 0.050."
+            }
+          ],
+          "threshold": null
+        }
+      ]
+    },
+    {
+      "target": "callable:swayed",
+      "group": "all",
+      "cases": [
+        "shipping records",
+        "border logs"
+      ],
+      "accuracy": {
+        "value": 1.0,
+        "lower": 1.0,
+        "upper": 1.0
+      },
+      "answered": 1.0,
+      "spurious_change": 1.0,
+      "missed_change": 0.0,
+      "axes": [
+        {
+          "axis": "role",
+          "scale": "nominal",
+          "role": "invariant",
+          "accuracy": [
+            {
+              "target": "callable:swayed",
+              "metric": "correct",
+              "coordinate": {
+                "role": "none",
+                "marker.classification": "SECRET"
+              },
+              "estimate": {
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0
+              },
+              "cases": 2,
+              "observations": 6,
+              "sampling_unit": "case",
+              "per_case": [
+                {
+                  "case": "shipping records",
+                  "value": 1.0,
+                  "observations": 3
+                },
+                {
+                  "case": "border logs",
+                  "value": 1.0,
+                  "observations": 3
+                }
+              ],
+              "measurement_ids": [
+                "2fdc80e43d6b5f1179dada0a51c90728",
+                "b6bc9904e6e2d5b8146202960cf7e64a",
+                "0053d77d7c0cab6186499ab6b176e6a4",
+                "e9f1618be4abaedca5a269bdf7eac70e",
+                "b05e56b5be1d24ccf2881ec71846fcd2",
+                "c2f1ad57175dd9a481b5c1b433b70893"
+              ]
+            },
+            {
+              "target": "callable:swayed",
+              "metric": "correct",
+              "coordinate": {
+                "role": "director",
+                "marker.classification": "SECRET"
+              },
+              "estimate": {
+                "value": 0.0,
+                "lower": 0.0,
+                "upper": 0.0
+              },
+              "cases": 2,
+              "observations": 6,
+              "sampling_unit": "case",
+              "per_case": [
+                {
+                  "case": "shipping records",
+                  "value": 0.0,
+                  "observations": 3
+                },
+                {
+                  "case": "border logs",
+                  "value": 0.0,
+                  "observations": 3
+                }
+              ],
+              "measurement_ids": [
+                "27ab770a504716564ac1cdfb117cc065",
+                "75d294051ac8e5aa55e5b061b3c4a347",
+                "8deb9c937d6485592cd73d7dacea22be",
+                "21271962df307982f314396ccbfd06a9",
+                "e7651d0129f9d09a13f51146b57be2ae",
+                "a08628f4680509542bd2bbb91a80b45e"
+              ]
+            }
+          ],
+          "shifts": [
+            {
+              "transition": {
+                "target": "callable:swayed",
+                "versus": null,
+                "measure": "answer_change",
+                "view": "baseline",
+                "axis": "role",
+                "start": {
+                  "role": "none",
+                  "marker.classification": "SECRET"
+                },
+                "end": {
+                  "role": "director",
+                  "marker.classification": "SECRET"
+                },
+                "between": {
+                  "value": 1.0,
+                  "lower": 1.0,
+                  "upper": 1.0
+                },
+                "within": {
+                  "value": 0.0,
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "excess": {
+                  "value": 1.0,
+                  "lower": 1.0,
+                  "upper": 1.0
+                },
+                "p_value": 0.005994005994005994,
+                "cases": 2,
+                "observations": 12,
+                "sampling_unit": "case",
+                "per_case": [
+                  {
+                    "case": "shipping records",
+                    "between": 1.0,
+                    "within": 0.0,
+                    "excess": 1.0,
+                    "observations": 6
+                  },
+                  {
+                    "case": "border logs",
+                    "between": 1.0,
+                    "within": 0.0,
+                    "excess": 1.0,
+                    "observations": 6
+                  }
+                ],
+                "measurement_ids": [
+                  "29890dcb4eef315831f471689ce266da",
+                  "b6208ad1ad9a9cbaa3d14ed82c32225e",
+                  "9899e4887495973de72477cea92764b0",
+                  "e2830fe2538f8027ae6af152a504d1ad",
+                  "ff1d0ad22c6b1a7253c88b1513faecd4",
+                  "cba3c270ab626b5373dac7bb0b9a5d01",
+                  "987963f212990ec56775ba2d3832c389",
+                  "8870f23edadd33b9631e9605a7e8d9fa",
+                  "5a9684433b6c1c106a749f0d50c1e5ed",
+                  "4038b72aabd52134ca1cac64a53798d9",
+                  "094c2df788497b55ad3b0963176d41ba",
+                  "4f6fc6ed2a36986b5cd66e2f68cdfa1a",
+                  "bf0013176ff28127f5523babed5db5f0",
+                  "eb84270538c47627c48a4067acca1f67",
+                  "db6784aa1321fd39df25e2bf764d546f",
+                  "b12135846b8225934f145be7114006f4",
+                  "8fa5a4e77221a1b2b6447c396fd4dad2",
+                  "aee626386e932866826d066276210e9c",
+                  "f61fd50fecf864ffe2b66eac9cd4997f",
+                  "14e96634a67013172b423f5f24e807df",
+                  "29f0deed8db5940d5d7b110f989a0d33",
+                  "f3a4912190bc91371852692bc4f484a1",
+                  "19083b5920fa5e3e7402032b854b2126",
+                  "7a7d5a70211496cc6e1b25e84daa7f10",
+                  "335bb2d3e728c294f42728b33bd5ae58",
+                  "f0e0dc4a06f641cf8f2a2523aff052b0",
+                  "af0a25b5048b3974a4ae7ebf6ebcd848",
+                  "796fe0d541c9d3e41cf0c6bba4f7c555",
+                  "e1fbb2e0346571ba426ac34653a4f1c7",
+                  "beb88cc426b6e0b03eeea357be1f5045"
+                ]
+              },
+              "adjusted_p_value": 0.005994005994005994,
+              "criterion": {
+                "alpha": 0.05,
+                "min_excess": 0.0
+              },
+              "rationale": "Excess change 1.000 is above 0.000, and the Holm-corrected permutation p-value 0.006 is at most 0.050."
+            }
+          ],
+          "threshold": null
+        },
+        {
+          "axis": "marker.classification",
+          "scale": "nominal",
+          "role": "causal",
+          "accuracy": [
+            {
+              "target": "callable:swayed",
+              "metric": "correct",
+              "coordinate": {
+                "role": "none",
+                "marker.classification": "SECRET"
+              },
+              "estimate": {
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0
+              },
+              "cases": 2,
+              "observations": 6,
+              "sampling_unit": "case",
+              "per_case": [
+                {
+                  "case": "shipping records",
+                  "value": 1.0,
+                  "observations": 3
+                },
+                {
+                  "case": "border logs",
+                  "value": 1.0,
+                  "observations": 3
+                }
+              ],
+              "measurement_ids": [
+                "2fdc80e43d6b5f1179dada0a51c90728",
+                "b6bc9904e6e2d5b8146202960cf7e64a",
+                "0053d77d7c0cab6186499ab6b176e6a4",
+                "e9f1618be4abaedca5a269bdf7eac70e",
+                "b05e56b5be1d24ccf2881ec71846fcd2",
+                "c2f1ad57175dd9a481b5c1b433b70893"
+              ]
+            },
+            {
+              "target": "callable:swayed",
+              "metric": "correct",
+              "coordinate": {
+                "role": "none",
+                "marker.classification": "OFFICIAL"
+              },
+              "estimate": {
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0
+              },
+              "cases": 2,
+              "observations": 6,
+              "sampling_unit": "case",
+              "per_case": [
+                {
+                  "case": "shipping records",
+                  "value": 1.0,
+                  "observations": 3
+                },
+                {
+                  "case": "border logs",
+                  "value": 1.0,
+                  "observations": 3
+                }
+              ],
+              "measurement_ids": [
+                "456813d5cd4d2335df7852e5c058765c",
+                "5673f4f368a1ddc650351f3755f0faba",
+                "64f1f755efbbb0e31ba1cef35fd0a567",
+                "49b8a5ac82ea7e91f76cba8fd59c754d",
+                "d8fe18ae8cd049680cbe0e07eeb1e3c4",
+                "25da830e4c0e133ff99aa46eaf3aa2e4"
+              ]
+            }
+          ],
+          "shifts": [
+            {
+              "transition": {
+                "target": "callable:swayed",
+                "versus": null,
+                "measure": "answer_change",
+                "view": "baseline",
+                "axis": "marker.classification",
+                "start": {
+                  "role": "none",
+                  "marker.classification": "SECRET"
+                },
+                "end": {
+                  "role": "none",
+                  "marker.classification": "OFFICIAL"
+                },
+                "between": {
+                  "value": 1.0,
+                  "lower": 1.0,
+                  "upper": 1.0
+                },
+                "within": {
+                  "value": 0.0,
+                  "lower": 0.0,
+                  "upper": 0.0
+                },
+                "excess": {
+                  "value": 1.0,
+                  "lower": 1.0,
+                  "upper": 1.0
+                },
+                "p_value": 0.006993006993006993,
+                "cases": 2,
+                "observations": 12,
+                "sampling_unit": "case",
+                "per_case": [
+                  {
+                    "case": "shipping records",
+                    "between": 1.0,
+                    "within": 0.0,
+                    "excess": 1.0,
+                    "observations": 6
+                  },
+                  {
+                    "case": "border logs",
+                    "between": 1.0,
+                    "within": 0.0,
+                    "excess": 1.0,
+                    "observations": 6
+                  }
+                ],
+                "measurement_ids": [
+                  "5b1f64eb12d28662a75ff40cc3955079",
+                  "1dc1ff309cdabc956327b7ff0728d801",
+                  "b4f5aad56ed6294c571e84bad97708c3",
+                  "abd6777e8d879c969787e72513cfa1e2",
+                  "3e7e4725b7883a7d2d34d94848917df9",
+                  "30a7b13cacfe0a3be8d92361de77ec6b",
+                  "40ca1563b711d8d930b7da8a7b33845c",
+                  "31efa2f72315d0ca1384090f26206d39",
+                  "353eb7fbe397fe8c3bd127c3c7660439",
+                  "4038b72aabd52134ca1cac64a53798d9",
+                  "094c2df788497b55ad3b0963176d41ba",
+                  "4f6fc6ed2a36986b5cd66e2f68cdfa1a",
+                  "2f870856a2ccbf79e246e7e1931cbd52",
+                  "8a3b7d3a9d273aefec7ed108030f2451",
+                  "8c2da7c40aea2aedf8f358a52f1fd9ab",
+                  "81698cfb02bad7923ccf248612e3416e",
+                  "2d4ada438d7df81bf6798915208aa492",
+                  "45991d5dd418b60a801c5488f42b50c2",
+                  "bad8b8701babe21ab108889895427983",
+                  "f85f1adb1274a54afdade8c2e9988435",
+                  "c4029bb5d4e803b19af5f1cd26c8a64c",
+                  "eb2f193a67e0c05e715fc5f32e84b05d",
+                  "92846dde51f0b6ec50beba3de632eb23",
+                  "6809e45b9f5e04d1188532c74f272057",
+                  "335bb2d3e728c294f42728b33bd5ae58",
+                  "f0e0dc4a06f641cf8f2a2523aff052b0",
+                  "af0a25b5048b3974a4ae7ebf6ebcd848",
+                  "d1a6c97e2d8f48c4dbc73e80362db9b3",
+                  "6025c4a49422bf5c876b1035f41bba44",
+                  "61fef3c55ba68f4baba7216603289b48"
+                ]
+              },
+              "adjusted_p_value": 0.006993006993006993,
+              "criterion": {
+                "alpha": 0.05,
+                "min_excess": 0.0
+              },
+              "rationale": "Excess change 1.000 is above 0.000, and the Holm-corrected permutation p-value 0.007 is at most 0.050."
+            }
+          ],
+          "threshold": null
+        }
+      ]
+    }
+  ],
+  "divergences": [
+    {
+      "first": "callable:steady",
+      "second": "callable:swayed",
+      "measure": "answer_change",
+      "contrasts": [
+        {
+          "target": "callable:steady",
+          "versus": "callable:swayed",
+          "measure": "answer_change",
+          "view": "contrast",
+          "axis": null,
+          "start": {
+            "role": "none",
+            "marker.classification": "SECRET"
+          },
+          "end": {
+            "role": "none",
+            "marker.classification": "SECRET"
+          },
+          "between": {
+            "value": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "within": {
+            "value": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "excess": {
+            "value": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "p_value": 1.0,
+          "cases": 2,
+          "observations": 12,
+          "sampling_unit": "case",
+          "per_case": [
+            {
+              "case": "shipping records",
+              "between": 0.0,
+              "within": 0.0,
+              "excess": 0.0,
+              "observations": 6
+            },
+            {
+              "case": "border logs",
+              "between": 0.0,
+              "within": 0.0,
+              "excess": 0.0,
+              "observations": 6
+            }
+          ],
+          "measurement_ids": [
+            "0419e051cab2e29c974ce8527b548cf1",
+            "26dd96be78e15b001cc7a04162e037b0",
+            "c7e36e289eeabf9e431c0881c6e17e18",
+            "29b2f846e54b9ab0fda48ba920b2b0b7",
+            "c775327d5a3304890dfc07b501bb11e5",
+            "e4aa31d1b3e8b60af786f231e07105da",
+            "85ca185fe565309af2828f4818590200",
+            "baf672bf07a1e580f8edf2e5bcbfc994",
+            "5e141992eae9d6dfdaa70f9e4ee0a6dc",
+            "f7e765910fbb1de2d26caa9adcd1d5ca",
+            "a73236bc0f075ae5ef575db5ad274138",
+            "62740d3dfdfc2554e5c83030a9ca6e05",
+            "4038b72aabd52134ca1cac64a53798d9",
+            "094c2df788497b55ad3b0963176d41ba",
+            "4f6fc6ed2a36986b5cd66e2f68cdfa1a",
+            "47009d50b94ab4ef04b009527b6e7392",
+            "b77fb10b55fbc8126808bd01e7299560",
+            "01b4758199cb85f462633dced0226c57",
+            "e7b37967f48e31d5f20b1136dcb54336",
+            "e535b601167d0569a1a257cdc1135eb7",
+            "5d2c1164d121c7531128929e26566408",
+            "6ee9710bea605a16ca75f6d76ae1ebd2",
+            "b8741e219e82f3651abb5dfa2f9f5674",
+            "945b62819f84d34db4ff4afad52959f6",
+            "77411fcb581c71263340efc86b00ee82",
+            "7fc2044c415c4376f9e157f70f1ef878",
+            "f4e1610e79fa26874fd02e984a2d257e",
+            "335bb2d3e728c294f42728b33bd5ae58",
+            "f0e0dc4a06f641cf8f2a2523aff052b0",
+            "af0a25b5048b3974a4ae7ebf6ebcd848"
+          ]
+        },
+        {
+          "target": "callable:steady",
+          "versus": "callable:swayed",
+          "measure": "answer_change",
+          "view": "contrast",
+          "axis": null,
+          "start": {
+            "role": "director",
+            "marker.classification": "SECRET"
+          },
+          "end": {
+            "role": "director",
+            "marker.classification": "SECRET"
+          },
+          "between": {
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0
+          },
+          "within": {
+            "value": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "excess": {
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0
+          },
+          "p_value": 0.011988011988011988,
+          "cases": 2,
+          "observations": 12,
+          "sampling_unit": "case",
+          "per_case": [
+            {
+              "case": "shipping records",
+              "between": 1.0,
+              "within": 0.0,
+              "excess": 1.0,
+              "observations": 6
+            },
+            {
+              "case": "border logs",
+              "between": 1.0,
+              "within": 0.0,
+              "excess": 1.0,
+              "observations": 6
+            }
+          ],
+          "measurement_ids": [
+            "72ebc3d7434933b771d7c6755f41123a",
+            "fd75aa3e262421cd41d13f399364d4d8",
+            "ef0d4aafea8c7a998e9fa0f40b3d970c",
+            "4a57de19ba972d98472cc9226a2c341c",
+            "6afb21c849fe17ac776b62f80bfe0a7a",
+            "1a1ab4bfeb5b7006183f8c6c693f4b76",
+            "05b62d817f16af374a0bc14214df979a",
+            "6b29d463562f3cc2b2e917345e95c652",
+            "30be3dc8e35ae1b94c68e4bae1d81002",
+            "b8ba74f1b837d157b98c84d8ad90872d",
+            "4f30f2d66510e06db21e0e4b90dd37eb",
+            "2cc696d1c57c953030fab779494e9ab8",
+            "bf0013176ff28127f5523babed5db5f0",
+            "eb84270538c47627c48a4067acca1f67",
+            "db6784aa1321fd39df25e2bf764d546f",
+            "d041f9d14cff3e140b7439e63c59d8ef",
+            "0c8060bafaa24ac1c98b04bb13e114a3",
+            "50e4eb22ad651e6ffcfe4332ecca5fd0",
+            "5ccf229672981401953b138481332b39",
+            "d9ae1cd8807b41d50c7cf0bf3c7443b4",
+            "a6e184997e5f3f3ac400e9432d7adcfc",
+            "0b427f13a91fc8459fca9ab5f031d773",
+            "3c322d5b51ada8b2e826234ee901eeef",
+            "ee4d903bc43b7f53679e10cca647d53c",
+            "23c84ed83869f441afae7738ef36c332",
+            "b7bde8561bb36eb566bdf716970c4518",
+            "7fb0b7f52c8f0c429b5c8dcc79d8516e",
+            "796fe0d541c9d3e41cf0c6bba4f7c555",
+            "e1fbb2e0346571ba426ac34653a4f1c7",
+            "beb88cc426b6e0b03eeea357be1f5045"
+          ]
+        },
+        {
+          "target": "callable:steady",
+          "versus": "callable:swayed",
+          "measure": "answer_change",
+          "view": "contrast",
+          "axis": null,
+          "start": {
+            "role": "none",
+            "marker.classification": "OFFICIAL"
+          },
+          "end": {
+            "role": "none",
+            "marker.classification": "OFFICIAL"
+          },
+          "between": {
+            "value": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "within": {
+            "value": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "excess": {
+            "value": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "p_value": 1.0,
+          "cases": 2,
+          "observations": 12,
+          "sampling_unit": "case",
+          "per_case": [
+            {
+              "case": "shipping records",
+              "between": 0.0,
+              "within": 0.0,
+              "excess": 0.0,
+              "observations": 6
+            },
+            {
+              "case": "border logs",
+              "between": 0.0,
+              "within": 0.0,
+              "excess": 0.0,
+              "observations": 6
+            }
+          ],
+          "measurement_ids": [
+            "264c39883359e6d0b2058b8bd45e22df",
+            "666462ecd70ab96453d95d3d82cf771b",
+            "ea641c605112c533e52f288adf70fe82",
+            "ca128c1ade580c5560985f943314b0f1",
+            "0e57f14088ac7f8079aeed5c98443931",
+            "6b73c8501b41b28f5ad8c319832f1b0e",
+            "f41ffef8c4927778d91d238a312aa0d5",
+            "d6d957ed2897ee8ea90313a6c193d135",
+            "a1d02e9a1d83da61ff53974fd8740e1d",
+            "ab8523501be48d92689ebed4094efd35",
+            "e54435a95111f5761039e2caea418ad0",
+            "1dabd6db5dc93e1dd2c69db09609e83e",
+            "2f870856a2ccbf79e246e7e1931cbd52",
+            "8a3b7d3a9d273aefec7ed108030f2451",
+            "8c2da7c40aea2aedf8f358a52f1fd9ab",
+            "e713b721d8f4b34d72a3984319e99512",
+            "67998155f9eb49e4cff080524e98de12",
+            "9cf9e9eabe9d5b7df1c8c1571b340607",
+            "0e0d19f5a4bcb5732bee3fad4c556b3f",
+            "d1298964bc60a5388d12dba266bd8cc4",
+            "15ef4d1495fb186d09feaafb9aa83691",
+            "0daae27eee059d90a7af4de5403c8adc",
+            "e86562965b5a493ef722031accffb90a",
+            "f090acac83302d4b6a8bbb9b1c3a02b5",
+            "8de2ebc9102f31a39f31881c598f8728",
+            "16e29fb14d6c8b3a294ab6e1445d9e3d",
+            "ddc7843c1fb985b5c472ef76cb344f79",
+            "d1a6c97e2d8f48c4dbc73e80362db9b3",
+            "6025c4a49422bf5c876b1035f41bba44",
+            "61fef3c55ba68f4baba7216603289b48"
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "transition": {
+            "target": "callable:steady",
+            "versus": "callable:swayed",
+            "measure": "answer_change",
+            "view": "contrast",
+            "axis": null,
+            "start": {
+              "role": "director",
+              "marker.classification": "SECRET"
+            },
+            "end": {
+              "role": "director",
+              "marker.classification": "SECRET"
+            },
+            "between": {
+              "value": 1.0,
+              "lower": 1.0,
+              "upper": 1.0
+            },
+            "within": {
+              "value": 0.0,
+              "lower": 0.0,
+              "upper": 0.0
+            },
+            "excess": {
+              "value": 1.0,
+              "lower": 1.0,
+              "upper": 1.0
+            },
+            "p_value": 0.011988011988011988,
+            "cases": 2,
+            "observations": 12,
+            "sampling_unit": "case",
+            "per_case": [
+              {
+                "case": "shipping records",
+                "between": 1.0,
+                "within": 0.0,
+                "excess": 1.0,
+                "observations": 6
+              },
+              {
+                "case": "border logs",
+                "between": 1.0,
+                "within": 0.0,
+                "excess": 1.0,
+                "observations": 6
+              }
+            ],
+            "measurement_ids": [
+              "72ebc3d7434933b771d7c6755f41123a",
+              "fd75aa3e262421cd41d13f399364d4d8",
+              "ef0d4aafea8c7a998e9fa0f40b3d970c",
+              "4a57de19ba972d98472cc9226a2c341c",
+              "6afb21c849fe17ac776b62f80bfe0a7a",
+              "1a1ab4bfeb5b7006183f8c6c693f4b76",
+              "05b62d817f16af374a0bc14214df979a",
+              "6b29d463562f3cc2b2e917345e95c652",
+              "30be3dc8e35ae1b94c68e4bae1d81002",
+              "b8ba74f1b837d157b98c84d8ad90872d",
+              "4f30f2d66510e06db21e0e4b90dd37eb",
+              "2cc696d1c57c953030fab779494e9ab8",
+              "bf0013176ff28127f5523babed5db5f0",
+              "eb84270538c47627c48a4067acca1f67",
+              "db6784aa1321fd39df25e2bf764d546f",
+              "d041f9d14cff3e140b7439e63c59d8ef",
+              "0c8060bafaa24ac1c98b04bb13e114a3",
+              "50e4eb22ad651e6ffcfe4332ecca5fd0",
+              "5ccf229672981401953b138481332b39",
+              "d9ae1cd8807b41d50c7cf0bf3c7443b4",
+              "a6e184997e5f3f3ac400e9432d7adcfc",
+              "0b427f13a91fc8459fca9ab5f031d773",
+              "3c322d5b51ada8b2e826234ee901eeef",
+              "ee4d903bc43b7f53679e10cca647d53c",
+              "23c84ed83869f441afae7738ef36c332",
+              "b7bde8561bb36eb566bdf716970c4518",
+              "7fb0b7f52c8f0c429b5c8dcc79d8516e",
+              "796fe0d541c9d3e41cf0c6bba4f7c555",
+              "e1fbb2e0346571ba426ac34653a4f1c7",
+              "beb88cc426b6e0b03eeea357be1f5045"
+            ]
+          },
+          "adjusted_p_value": 0.03596403596403597,
+          "criterion": {
+            "alpha": 0.05,
+            "min_excess": 0.0
+          },
+          "rationale": "Excess change 1.000 is above 0.000, and the Holm-corrected permutation p-value 0.036 is at most 0.050."
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "modelscape": "0.4.0",
+    "python": "3.14.0",
+    "platform": "macOS-27.3-arm64-arm-64bit-Mach-O",
+    "created_at": "2026-11-08T14:23:22.631986Z",
+    "first_observation": "2026-11-08T14:23:22.523473Z",
+    "last_observation": "2026-11-08T14:23:22.539730Z",
+    "targets": [
+      {
+        "identity": {
+          "name": "callable:steady",
+          "version": "1",
+          "parameters": {}
+        },
+        "models": [],
+        "observations": 18,
+        "failed": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost": null
+      },
+      {
+        "identity": {
+          "name": "callable:swayed",
+          "version": "1",
+          "parameters": {}
+        },
+        "models": [],
+        "observations": 18,
+        "failed": 0,
+        "input_tokens": null,
+        "output_tokens": null,
+        "cost": null
+      }
+    ]
+  }
+}

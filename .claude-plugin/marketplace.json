@@ -1,0 +1,19 @@
+{
+  "name": "modelscape",
+  "description": "Write, check, and run modelscape specs: tests of what an LLM's answers depend on.",
+  "owner": {
+    "name": "Sjoerd Vink",
+    "url": "https://github.com/sjoerdvink99"
+  },
+  "plugins": [
+    {
+      "name": "modelscape",
+      "source": "./modelscape",
+      "description": "Write, check, and run modelscape specs: tests of what an LLM's answers depend on.",
+      "homepage": "https://modelscape.github.io/modelscape/agents/",
+      "repository": "https://github.com/Modelscape/modelscape",
+      "license": "MIT",
+      "keywords": ["llm", "evaluation", "behavioral-testing"]
+    }
+  ]
+}

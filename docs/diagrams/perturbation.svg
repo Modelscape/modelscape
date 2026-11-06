@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ms" viewBox="0 0 720 232" role="img" aria-labelledby="ms-perturbation-t ms-perturbation-d">
+  <title id="ms-perturbation-t">A checked perturbation step</title>
+  <desc id="ms-perturbation-d">set_pressure moves a seed refund task to pressure 2 by adding two appeals. The amount and reference stay the same. The variant is then realized as the stored prompt.</desc>
+  <style>
+    svg.ms{--ink:var(--md-default-fg-color,#1f2328);--mute:var(--md-default-fg-color--light,#6e7781);--rule:var(--md-default-fg-color--lighter,#c8ccd1);--fill:var(--md-code-bg-color,#f5f6f8);--acc:#4c6ef5;--hot:#e8590c}
+    @media (prefers-color-scheme:dark){svg.ms{--ink:var(--md-default-fg-color,#e6edf3);--mute:var(--md-default-fg-color--light,#9198a1);--rule:var(--md-default-fg-color--lighter,#3d444d);--fill:var(--md-code-bg-color,#1c2128);--acc:#748ffc;--hot:#ff922b}}
+    svg.ms text{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+    svg.ms .c{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+    svg.ms .s{font-size:11px}
+    svg.ms .h{font-weight:600}
+    svg.ms .mu{fill:var(--mute)}
+    svg.ms .ac{fill:var(--acc)}
+    svg.ms .ho{fill:var(--hot)}
+    svg.ms .box{fill:var(--fill);stroke:var(--rule)}
+    svg.ms .hot{fill:none;stroke:var(--hot)}
+    svg.ms .hz{fill:var(--hot);opacity:.1}
+    svg.ms .az{fill:var(--acc);opacity:.15}
+    svg.ms .ln{fill:none;stroke:var(--mute);stroke-width:1.5}
+    svg.ms .rl{fill:none;stroke:var(--rule)}
+    svg.ms .al{fill:none;stroke:var(--acc);stroke-width:2}
+    svg.ms .ah{fill:var(--mute)}
+    svg.ms .gr{fill:var(--rule)}
+  </style>
+  <defs>
+    <marker id="ms-perturbation-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9z" class="ah"/>
+    </marker>
+  </defs>
+  <g class="c">
+    <rect x="20" y="20" width="200" height="130" rx="6" class="box"/>
+    <text x="34" y="42" class="s mu">seed</text>
+    <text x="34" y="66">amount    = 800</text>
+    <text x="34" y="84">appeals   = ()</text>
+    <path d="M34 98H206" class="rl"/>
+    <text x="34" y="118">pressure  = 0</text>
+    <text x="34" y="136">reference = "escalate"</text>
+
+    <rect x="310" y="20" width="200" height="130" rx="6" class="box"/>
+    <text x="324" y="42" class="s mu">variant</text>
+    <text x="324" y="66">amount    = 800</text>
+    <text x="324" y="84">appeals   = <tspan class="ac">(a1, a2)</tspan></text>
+    <path d="M324 98H496" class="rl"/>
+    <text x="324" y="118">pressure  = <tspan class="ac">2</tspan></text>
+    <text x="324" y="136">reference = "escalate"</text>
+
+    <text x="265" y="76" text-anchor="middle">set_pressure</text>
+    <text x="265" y="104" text-anchor="middle" class="s mu">level=2</text>
+    <text x="550" y="76" text-anchor="middle" class="mu">@realizer</text>
+  </g>
+  <path d="M224 86H306" class="ln" marker-end="url(#ms-perturbation-a)"/>
+  <path d="M514 86H586" class="ln" marker-end="url(#ms-perturbation-a)"/>
+  <rect x="590" y="64" width="110" height="44" rx="6" class="box"/>
+  <text x="645" y="91" text-anchor="middle">Prompt</text>
+  <text x="645" y="128" text-anchor="middle" class="s mu">stored with variant</text>
+
+  <text x="20" y="190" class="h">Every step is checked</text>
+  <g>
+    <text x="190" y="190"><tspan class="ac">✓</tspan> valid task</text>
+    <text x="300" y="190"><tspan class="ac">✓</tspan> deterministic</text>
+    <text x="430" y="190"><tspan class="ac">✓</tspan> reaches pressure = 2</text>
+    <text x="190" y="214"><tspan class="ac">✓</tspan> other attributes unchanged, unless declared <tspan class="c">free</tspan></text>
+  </g>
+</svg>

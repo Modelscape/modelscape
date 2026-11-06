@@ -1,0 +1,51 @@
+name: Weekly
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          python-version: "3.14"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm --prefix page ci && npm --prefix page run build
+      - run: uv sync --upgrade --all-extras --all-groups
+      - run: uv run --no-sync pyright
+      - run: uv run --no-sync pytest -n auto
+
+  providers:
+    runs-on: ubuntu-latest
+    env:
+      MODELSCAPE_ANTHROPIC_MODEL: ${{ vars.MODELSCAPE_ANTHROPIC_MODEL }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      MODELSCAPE_AZURE_OPENAI_MODEL: ${{ vars.MODELSCAPE_AZURE_OPENAI_MODEL }}
+      AZURE_OPENAI_ENDPOINT: ${{ vars.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+      MODELSCAPE_BEDROCK_MODEL: ${{ vars.MODELSCAPE_BEDROCK_MODEL }}
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      MODELSCAPE_GOOGLE_MODEL: ${{ vars.MODELSCAPE_GOOGLE_MODEL }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      MODELSCAPE_OPENAI_MODEL: ${{ vars.MODELSCAPE_OPENAI_MODEL }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm --prefix page ci && npm --prefix page run build
+      - run: uv sync --locked --all-extras --all-groups
+      - run: uv run pytest -m integration tests/test_integration.py
